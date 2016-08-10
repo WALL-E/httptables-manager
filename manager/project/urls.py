@@ -1,16 +1,10 @@
 
 from django.contrib import admin
 from django.conf.urls import url, include
-from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from app.models import Role, RoleType
 
 # Serializers define the API representation.
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ('url', 'username', 'email', 'is_staff')
-
 class RoleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Role
@@ -23,10 +17,6 @@ class RoleTypeSerializer(serializers.HyperlinkedModelSerializer):
 
 
 # ViewSets define the view behavior.
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-
 class RoleViewSet(viewsets.ModelViewSet):
     queryset = Role.objects.all()
     serializer_class = RoleSerializer
@@ -38,7 +28,6 @@ class RoleTypeViewSet(viewsets.ModelViewSet):
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
-router.register(r'apis/users', UserViewSet)
 router.register(r'apis/roles', RoleViewSet)
 router.register(r'apis/role_types', RoleTypeViewSet)
 
