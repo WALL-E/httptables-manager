@@ -14,12 +14,12 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class RoleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Role
-        fields = ('type', 'mark', 'uri', 'method', 'createtime', 'expired', 'action', 'response', 'duration')
+        fields = ('url', 'type', 'mark', 'uri', 'method', 'createtime', 'expired', 'action', 'response', 'duration')
 
 class RoleTypeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = RoleType
-        fields = ('name', 'priority', 'lamda', 'enable')
+        fields = ('url', 'name', 'priority', 'lamda', 'enable')
 
 
 # ViewSets define the view behavior.
