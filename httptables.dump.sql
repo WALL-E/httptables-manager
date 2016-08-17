@@ -301,10 +301,10 @@ UNLOCK TABLES;
 -- Table structure for table `role`
 --
 
-DROP TABLE IF EXISTS `role`;
+DROP TABLE IF EXISTS `app_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `role` (
+CREATE TABLE `app_role` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `type` varchar(64) NOT NULL,
   `mark` varchar(1024) NOT NULL,
@@ -323,9 +323,9 @@ CREATE TABLE `role` (
 -- Dumping data for table `role`
 --
 
-LOCK TABLES `role` WRITE;
+LOCK TABLES `app_role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` VALUES (3,'device','device_1','/test/device','post',1470304637,1475246619,'reject','{\"status\":4003, \"message\":\"illegal device\"}',0),(4,'user','user_1','/test/user','get',1470304637,1475246619,'reject','{\"status\":4002, \"message\":\"illegal user\"}',0),(18,'origin','127.0.0.1','/test/origin','get,post',1470304637,1475246619,'reject','{\"status\":4001, \"message\":\"illegal origin\"}',0);
+INSERT INTO `app_role` VALUES (3,'device','device_1','/test/device','post',1470304637,1475246619,'reject','{\"status\":4003, \"message\":\"illegal device\"}',0),(4,'user','user_1','/test/user','get',1470304637,1475246619,'reject','{\"status\":4002, \"message\":\"illegal user\"}',0),(18,'origin','127.0.0.1','/test/origin','get,post',1470304637,1475246619,'reject','{\"status\":4001, \"message\":\"illegal origin\"}',0);
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -333,10 +333,10 @@ UNLOCK TABLES;
 -- Table structure for table `role_type`
 --
 
-DROP TABLE IF EXISTS `role_type`;
+DROP TABLE IF EXISTS `app_roletype`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `role_type` (
+CREATE TABLE `app_roletype` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   `priority` int(11) DEFAULT '0',
@@ -352,9 +352,9 @@ CREATE TABLE `role_type` (
 -- Dumping data for table `role_type`
 --
 
-LOCK TABLES `role_type` WRITE;
+LOCK TABLES `app_roletype` WRITE;
 /*!40000 ALTER TABLE `role_type` DISABLE KEYS */;
-INSERT INTO `role_type` VALUES (2,'device',1,'return ngx.req.get_headers()[\'X-Device-ID\']',1),(3,'user',1,'return ngx.req.get_headers()[\'X-User-ID\']',1),(5,'origin',3,'return ngx.var.remote_addr',1);
+INSERT INTO `app_roletype` VALUES (2,'device',1,'return ngx.req.get_headers()[\'X-Device-ID\']',1),(3,'user',1,'return ngx.req.get_headers()[\'X-User-ID\']',1),(5,'origin',3,'return ngx.var.remote_addr',1);
 /*!40000 ALTER TABLE `role_type` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
