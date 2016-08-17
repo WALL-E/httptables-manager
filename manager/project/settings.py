@@ -135,3 +135,25 @@ REST_FRAMEWORK = {
 }
 
 APPEND_SLASH = False
+
+HTTPTABLES_NOTIFY_URL=["http://172.28.32.105:8001/admin/notify"]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+

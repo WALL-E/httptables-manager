@@ -1,4 +1,10 @@
 from django.db import models
+from project import settings
+import requests
+import logging
+import http
+
+logger = logging.getLogger("django")
 
 # Create your models here.
 
@@ -19,6 +25,18 @@ class Role(models.Model):
  
     def __str__(self):
         return "%s_%s" %(self.type, self.mark)
+   
+    def save(self, *args, **kw):
+        for url in settings.HTTPTABLES_NOTIFY_URL:
+            try:
+                response = requests.get(url)
+                if response.status_code == http.client.OK:
+                    logger.info("[httptables notify] %s: ok" % (url))
+                else:
+                    logger.error("[httptables notify] %s: failed" % (url))
+            except Exception as e:
+                logger.error("[httptables notify] %s: %s" % (url, e))
+        super(Role, self).save(*args, **kw)
 
 
 class RoleType(models.Model):
@@ -33,3 +51,15 @@ class RoleType(models.Model):
  
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kw):
+        for url in settings.HTTPTABLES_NOTIFY_URL:
+            try:
+                response = requests.get(url)
+                if response.status_code == http.client.OK:
+                    logger.info("[httptables notify] %s: ok" % (url))
+                else:
+                    logger.error("[httptables notify] %s: failed" % (url))
+            except Exception as e:
+                logger.error("[httptables notify] %s: %s" % (url, e))
+        super(RoleType, self).save(*args, **kw)
