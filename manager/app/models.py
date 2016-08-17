@@ -15,10 +15,10 @@ class Role(models.Model):
     duration = models.IntegerField(blank=True, null=False)
 
     def __unicode__(self):
-        return "%s_%s" %(self.type, slef.mark)
+        return "%s_%s" %(self.type, self.mark)
  
     def __str__(self):
-        return "%s_%s" %(self.type, slef.mark)
+        return "%s_%s" %(self.type, self.mark)
 
 
 class RoleType(models.Model):
