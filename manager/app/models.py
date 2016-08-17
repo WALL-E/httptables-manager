@@ -14,9 +14,11 @@ class Role(models.Model):
     response = models.CharField(max_length=1024, null=False)
     duration = models.IntegerField(blank=True, null=False)
 
-    class Meta:
-        managed = False
-        db_table = 'role'
+    def __unicode__(self):
+        return "%s_%s" %(self.type, slef.mark)
+ 
+    def __str__(self):
+        return "%s_%s" %(self.type, slef.mark)
 
 
 class RoleType(models.Model):
@@ -25,10 +27,6 @@ class RoleType(models.Model):
     priority = models.IntegerField(blank=True, null=True)
     lamda = models.CharField(max_length=1024)
     enable = models.IntegerField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'role_type'
 
     def __unicode__(self):
         return self.name
