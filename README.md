@@ -25,7 +25,7 @@ create two read-write API for accessing information on the role_types and roles
 
 1. install base package
 
-      run ** depends.sh **
+      run **depends.sh**
 
 2. start MySQL 
 
