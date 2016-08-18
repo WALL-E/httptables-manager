@@ -61,3 +61,7 @@ HTTPTABLES_NOTIFY_URL=["http://172.28.32.105:8001/admin/notify"]
 
 `172.28.32.105` is httptables's ip address, if you have multiple httptables, need to be added to this list.
 
+## Django admin
+One of the most powerful parts of Django is the automatic admin interface, the admin is enabled in the default, you can easily use if needed
+
+![dango-admin](images/django-admin.png)
