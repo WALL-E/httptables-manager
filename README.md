@@ -19,6 +19,8 @@ create two read-write API for accessing information on the role_types and roles
 * http://127.0.0.1:8080/apis/role_types
 * http://127.0.0.1:8080/apis/roles
 
+![dango-rest](images/django-rest.png)
+
 
 
 ## Install
