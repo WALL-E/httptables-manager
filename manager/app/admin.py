@@ -15,7 +15,7 @@ class RoleAdmin(admin.ModelAdmin):
 class RoleTypeAdmin(admin.ModelAdmin):
     fields = ['name', 'priority', 'lamda', 'enable', 'optional']
     list_display = ('name', 'priority', 'lamda', 'enable', 'optional')
-    list_filter = ['enable', 'options']
+    list_filter = ['enable', 'optional']
     search_fields = ['name']
 
     def get_ordering(self, request):
