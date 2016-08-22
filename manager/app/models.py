@@ -43,12 +43,20 @@ class Role(models.Model):
 
 
 class RoleType(models.Model):
+    ENABLE_CHOICES = (
+        (0, "停用"),
+        (1, "启用"),
+    )
+    OPTIONAL_CHOICES = (
+        (0, "不可选"),
+        (1, "可选"),
+    )
     id = models.BigIntegerField(primary_key=True)
     name = models.CharField(unique=True, max_length=64)
     priority = models.IntegerField(blank=True, null=False)
     lamda = models.CharField(max_length=1024, null=False)
-    enable = models.IntegerField(blank=True, null=False)
-    optional = models.IntegerField(blank=True, null=False)
+    enable = models.IntegerField(choices=ENABLE_CHOICES, default=1, null=False)
+    optional = models.IntegerField(choices=OPTIONAL_CHOICES, default=0, null=False)
 
     def __unicode__(self):
         return self.name
