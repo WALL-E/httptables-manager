@@ -38,6 +38,9 @@ class Role(models.Model):
                 logger.error("[httptables notify] %s: %s" % (url, e))
         super(Role, self).save(*args, **kw)
 
+    class Meta:
+        db_table = 'role'
+
 
 class RoleType(models.Model):
     id = models.BigIntegerField(primary_key=True)
@@ -64,3 +67,6 @@ class RoleType(models.Model):
             except Exception as e:
                 logger.error("[httptables notify] %s: %s" % (url, e))
         super(RoleType, self).save(*args, **kw)
+
+    class Meta:
+        db_table = 'role_type'

@@ -125,7 +125,7 @@ CREATE TABLE `auth_user` (
 
 LOCK TABLES `auth_user` WRITE;
 /*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$24000$eUShFq9e0NCD$mG2gTf4q4KDVUepTcadCwY4woaiwKkS0A5Ks59kaChI=','2016-08-16 09:36:59',1,'admin','','','admin@admin.com',1,1,'2016-08-16 09:31:23');
+INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$24000$oYxCgb2KciyD$YUJAowMdbxlyTOCc7TGQ9F7D6FMivaeXAYuP+jn5HDs=','2016-08-22 10:31:52',1,'admin','','','admin@admin.com',1,1,'2016-08-22 10:31:45');
 /*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,7 +206,7 @@ CREATE TABLE `django_admin_log` (
   KEY `django_admin_log_user_id_c564eba6_fk_auth_user_id` (`user_id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
   CONSTRAINT `django_admin__content_type_id_c4bce8eb_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -215,7 +215,7 @@ CREATE TABLE `django_admin_log` (
 
 LOCK TABLES `django_admin_log` WRITE;
 /*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
-INSERT INTO `django_admin_log` VALUES (1,'2016-08-16 09:37:10','12','user1',3,'',8,1),(2,'2016-08-16 09:37:27','23','Role object',3,'',7,1),(3,'2016-08-16 09:44:30','15','Role object',3,'',7,1),(4,'2016-08-16 09:44:30','14','Role object',3,'',7,1),(5,'2016-08-16 09:44:30','13','Role object',3,'',7,1),(6,'2016-08-16 09:44:30','12','Role object',3,'',7,1),(7,'2016-08-16 09:44:30','11','Role object',3,'',7,1),(8,'2016-08-16 09:44:30','10','Role object',3,'',7,1),(9,'2016-08-16 09:44:30','9','Role object',3,'',7,1),(10,'2016-08-16 09:44:30','8','Role object',3,'',7,1);
+INSERT INTO `django_admin_log` VALUES (1,'2016-08-22 10:32:29','3','user',2,'Changed priority.',8,1),(2,'2016-08-22 10:33:57','18','origin_127.0.0.1',2,'Changed method.',7,1),(3,'2016-08-22 10:34:05','3','device_device_1',2,'Changed method.',7,1),(4,'2016-08-22 10:34:17','18','origin_127.0.0.1',2,'Changed duration.',7,1),(5,'2016-08-22 10:34:23','4','user_user_1',2,'Changed duration.',7,1),(6,'2016-08-22 10:34:29','3','device_device_1',2,'Changed duration.',7,1);
 /*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -258,7 +258,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -267,7 +267,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2016-08-16 09:31:02'),(2,'auth','0001_initial','2016-08-16 09:31:02'),(3,'admin','0001_initial','2016-08-16 09:31:02'),(4,'admin','0002_logentry_remove_auto_add','2016-08-16 09:31:02'),(5,'contenttypes','0002_remove_content_type_name','2016-08-16 09:31:03'),(6,'auth','0002_alter_permission_name_max_length','2016-08-16 09:31:03'),(7,'auth','0003_alter_user_email_max_length','2016-08-16 09:31:03'),(8,'auth','0004_alter_user_username_opts','2016-08-16 09:31:03'),(9,'auth','0005_alter_user_last_login_null','2016-08-16 09:31:03'),(10,'auth','0006_require_contenttypes_0002','2016-08-16 09:31:03'),(11,'auth','0007_alter_validators_add_error_messages','2016-08-16 09:31:03'),(12,'sessions','0001_initial','2016-08-16 09:31:03');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2016-08-22 10:28:16'),(2,'auth','0001_initial','2016-08-22 10:28:16'),(3,'admin','0001_initial','2016-08-22 10:28:16'),(4,'admin','0002_logentry_remove_auto_add','2016-08-22 10:28:16'),(5,'contenttypes','0002_remove_content_type_name','2016-08-22 10:28:16'),(6,'auth','0002_alter_permission_name_max_length','2016-08-22 10:28:16'),(7,'auth','0003_alter_user_email_max_length','2016-08-22 10:28:16'),(8,'auth','0004_alter_user_username_opts','2016-08-22 10:28:16'),(9,'auth','0005_alter_user_last_login_null','2016-08-22 10:28:16'),(10,'auth','0006_require_contenttypes_0002','2016-08-22 10:28:16'),(11,'auth','0007_alter_validators_add_error_messages','2016-08-22 10:28:16'),(12,'sessions','0001_initial','2016-08-22 10:28:16'),(13,'app','0001_initial','2016-08-22 10:28:53');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -293,7 +293,7 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('1bc9xvkv6a9ysd2k06hxr4jt5m4ai1ko','MDlhNmI1NzcyNmZjODA1YzE2NTM1N2ZjYjlkNDg5ZmFmNzUzMzQ2Njp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiMTQyNTNjYTNmNWYwMjY2NDdmMzg3NzU3M2NiZjdmNTg1ODg0ZmRkZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=','2016-08-30 09:36:59');
+INSERT INTO `django_session` VALUES ('z5ehnyei0vlfi4g7ob71s7y3a9bbca2s','MWFmZGYyZGE1OWU2ZGQ3MTRmOTI2NmM2NGQyMDcxMjdlZGI2Y2Q3Njp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6IjEiLCJfYXV0aF91c2VyX2hhc2giOiJlYWM2NjQ2ZDVmNzQ3Y2JhOWU4MmEzNjE3ZTIyOWQ5MTQ4ZTNiYzU4In0=','2016-09-05 10:31:52');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -301,31 +301,31 @@ UNLOCK TABLES;
 -- Table structure for table `role`
 --
 
-DROP TABLE IF EXISTS `app_role`;
+DROP TABLE IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `app_role` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `role` (
+  `id` bigint(20) NOT NULL,
   `type` varchar(64) NOT NULL,
   `mark` varchar(1024) NOT NULL,
   `uri` varchar(1024) NOT NULL,
   `method` varchar(64) NOT NULL,
-  `createtime` int(11) DEFAULT '0',
-  `expired` int(11) DEFAULT '0',
+  `createtime` int(11) NOT NULL,
+  `expired` int(11) NOT NULL,
   `action` varchar(64) NOT NULL,
   `response` varchar(1024) NOT NULL,
-  `duration` int(11) DEFAULT '0',
+  `duration` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `role`
 --
 
-LOCK TABLES `app_role` WRITE;
+LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `app_role` VALUES (3,'device','device_1','/test/device','post',1470304637,1475246619,'reject','{\"status\":4003, \"message\":\"illegal device\"}',0),(4,'user','user_1','/test/user','get',1470304637,1475246619,'reject','{\"status\":4002, \"message\":\"illegal user\"}',0),(18,'origin','127.0.0.1','/test/origin','get,post',1470304637,1475246619,'reject','{\"status\":4001, \"message\":\"illegal origin\"}',0);
+INSERT INTO `role` VALUES (3,'device','device_1','/test/device','get',1470304637,1475246619,'reject','{\"status\":4003, \"message\":\"illegal device\"}',100),(4,'user','user_1','/test/user','get',1470304637,1475246619,'reject','{\"status\":4002, \"message\":\"illegal user\"}',100),(18,'origin','127.0.0.1','/test/origin','get',1470304637,1475246619,'reject','{\"status\":4001, \"message\":\"illegal origin\"}',100);
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -333,29 +333,28 @@ UNLOCK TABLES;
 -- Table structure for table `role_type`
 --
 
-DROP TABLE IF EXISTS `app_roletype`;
+DROP TABLE IF EXISTS `role_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `app_roletype` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `role_type` (
+  `id` bigint(20) NOT NULL,
   `name` varchar(64) NOT NULL,
-  `priority` int(11) DEFAULT '0',
+  `priority` int(11) NOT NULL,
   `lamda` varchar(1024) NOT NULL,
-  `enable` int(11) DEFAULT '1',
-  `optional` int(11) DEFAULT '0',
+  `enable` int(11) NOT NULL,
+  `optional` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`),
-  KEY `index_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `role_type`
 --
 
-LOCK TABLES `app_roletype` WRITE;
+LOCK TABLES `role_type` WRITE;
 /*!40000 ALTER TABLE `role_type` DISABLE KEYS */;
-INSERT INTO `app_roletype` VALUES (2,'device',1,'return ngx.req.get_headers()[\'X-Device-ID\']',1, 0),(3,'user',1,'return ngx.req.get_headers()[\'X-User-ID\']',1,0),(5,'origin',3,'return ngx.var.remote_addr',1,0);
+INSERT INTO `role_type` VALUES (2,'device',1,'return ngx.req.get_headers()[\'X-Device-ID\']',1,0),(3,'user',2,'return ngx.req.get_headers()[\'X-User-ID\']',1,0),(5,'origin',3,'return ngx.var.remote_addr',1,0);
 /*!40000 ALTER TABLE `role_type` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -368,4 +367,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-16  9:45:26
+-- Dump completed on 2016-08-22 10:35:04
