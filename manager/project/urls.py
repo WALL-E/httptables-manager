@@ -13,7 +13,7 @@ class RoleSerializer(serializers.HyperlinkedModelSerializer):
 class RoleTypeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = RoleType
-        fields = ('url', 'name', 'priority', 'lamda', 'enable')
+        fields = ('url', 'name', 'priority', 'lamda', 'enable', 'optional')
 
 
 # ViewSets define the view behavior.
