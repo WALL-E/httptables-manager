@@ -13,9 +13,9 @@ class RoleAdmin(admin.ModelAdmin):
         return ['-expired']
 
 class RoleTypeAdmin(admin.ModelAdmin):
-    fields = ['name', 'priority', 'lamda', 'enable']
-    list_display = ('name', 'priority', 'lamda', 'enable')
-    list_filter = ['enable']
+    fields = ['name', 'priority', 'lamda', 'enable', 'optional']
+    list_display = ('name', 'priority', 'lamda', 'enable', 'optional')
+    list_filter = ['enable', 'options']
     search_fields = ['name']
 
     def get_ordering(self, request):

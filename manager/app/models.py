@@ -42,9 +42,10 @@ class Role(models.Model):
 class RoleType(models.Model):
     id = models.BigIntegerField(primary_key=True)
     name = models.CharField(unique=True, max_length=64)
-    priority = models.IntegerField(blank=True, null=True)
-    lamda = models.CharField(max_length=1024)
-    enable = models.IntegerField(blank=True, null=True)
+    priority = models.IntegerField(blank=True, null=False)
+    lamda = models.CharField(max_length=1024, null=False)
+    enable = models.IntegerField(blank=True, null=False)
+    optional = models.IntegerField(blank=True, null=False)
 
     def __unicode__(self):
         return self.name

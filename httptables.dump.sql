@@ -341,7 +341,8 @@ CREATE TABLE `app_roletype` (
   `name` varchar(64) NOT NULL,
   `priority` int(11) DEFAULT '0',
   `lamda` varchar(1024) NOT NULL,
-  `enable` int(11) DEFAULT '0',
+  `enable` int(11) DEFAULT '1',
+  `optional` int(11) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`),
   KEY `index_name` (`name`)
@@ -354,7 +355,7 @@ CREATE TABLE `app_roletype` (
 
 LOCK TABLES `app_roletype` WRITE;
 /*!40000 ALTER TABLE `role_type` DISABLE KEYS */;
-INSERT INTO `app_roletype` VALUES (2,'device',1,'return ngx.req.get_headers()[\'X-Device-ID\']',1),(3,'user',1,'return ngx.req.get_headers()[\'X-User-ID\']',1),(5,'origin',3,'return ngx.var.remote_addr',1);
+INSERT INTO `app_roletype` VALUES (2,'device',1,'return ngx.req.get_headers()[\'X-Device-ID\']',1, 0),(3,'user',1,'return ngx.req.get_headers()[\'X-User-ID\']',1,0),(5,'origin',3,'return ngx.var.remote_addr',1,0);
 /*!40000 ALTER TABLE `role_type` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
