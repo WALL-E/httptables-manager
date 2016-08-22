@@ -206,7 +206,7 @@ CREATE TABLE `django_admin_log` (
   KEY `django_admin_log_user_id_c564eba6_fk_auth_user_id` (`user_id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
   CONSTRAINT `django_admin__content_type_id_c4bce8eb_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -215,7 +215,7 @@ CREATE TABLE `django_admin_log` (
 
 LOCK TABLES `django_admin_log` WRITE;
 /*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
-INSERT INTO `django_admin_log` VALUES (1,'2016-08-22 10:32:29','3','user',2,'Changed priority.',8,1),(2,'2016-08-22 10:33:57','18','origin_127.0.0.1',2,'Changed method.',7,1),(3,'2016-08-22 10:34:05','3','device_device_1',2,'Changed method.',7,1),(4,'2016-08-22 10:34:17','18','origin_127.0.0.1',2,'Changed duration.',7,1),(5,'2016-08-22 10:34:23','4','user_user_1',2,'Changed duration.',7,1),(6,'2016-08-22 10:34:29','3','device_device_1',2,'Changed duration.',7,1);
+INSERT INTO `django_admin_log` VALUES (1,'2016-08-22 10:32:29','3','user',2,'Changed priority.',8,1),(2,'2016-08-22 10:33:57','18','origin_127.0.0.1',2,'Changed method.',7,1),(3,'2016-08-22 10:34:05','3','device_device_1',2,'Changed method.',7,1),(4,'2016-08-22 10:34:17','18','origin_127.0.0.1',2,'Changed duration.',7,1),(5,'2016-08-22 10:34:23','4','user_user_1',2,'Changed duration.',7,1),(6,'2016-08-22 10:34:29','3','device_device_1',2,'Changed duration.',7,1),(7,'2016-08-22 10:51:26','2','device',2,'Changed optional.',8,1),(8,'2016-08-22 10:51:52','2','device',2,'Changed optional.',8,1);
 /*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -325,7 +325,7 @@ CREATE TABLE `role` (
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` VALUES (3,'device','device_1','/test/device','get',1470304637,1475246619,'reject','{\"status\":4003, \"message\":\"illegal device\"}',100),(4,'user','user_1','/test/user','get',1470304637,1475246619,'reject','{\"status\":4002, \"message\":\"illegal user\"}',100),(18,'origin','127.0.0.1','/test/origin','get',1470304637,1475246619,'reject','{\"status\":4001, \"message\":\"illegal origin\"}',100);
+INSERT INTO `role` VALUES (1,'device','device_1','/test/device','get',1470304637,1475246619,'reject','{\"status\":4003, \"message\":\"illegal device\"}',100),(2,'user','user_1','/test/user','get',1470304637,1475246619,'reject','{\"status\":4002, \"message\":\"illegal user\"}',100),(3,'origin','127.0.0.1','/test/origin','get',1470304637,1475246619,'reject','{\"status\":4001, \"message\":\"illegal origin\"}',100);
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -354,7 +354,7 @@ CREATE TABLE `role_type` (
 
 LOCK TABLES `role_type` WRITE;
 /*!40000 ALTER TABLE `role_type` DISABLE KEYS */;
-INSERT INTO `role_type` VALUES (2,'device',1,'return ngx.req.get_headers()[\'X-Device-ID\']',1,0),(3,'user',2,'return ngx.req.get_headers()[\'X-User-ID\']',1,0),(5,'origin',3,'return ngx.var.remote_addr',1,0);
+INSERT INTO `role_type` VALUES (1,'device',1,'return ngx.req.get_headers()[\'X-Device-ID\']',1,0),(2,'user',2,'return ngx.req.get_headers()[\'X-User-ID\']',1,0),(3,'origin',3,'return ngx.var.remote_addr',1,0);
 /*!40000 ALTER TABLE `role_type` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -367,4 +367,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-22 10:35:04
+-- Dump completed on 2016-08-22 11:10:39
