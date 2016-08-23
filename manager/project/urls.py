@@ -8,12 +8,12 @@ from app.models import Role, RoleType
 class RoleSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Role
-        fields = ('url', 'type', 'mark', 'uri', 'method', 'createtime', 'expired', 'action', 'response', 'duration')
+        fields = ('url', 'type', 'mark', 'uri', 'method', 'createtime', 'expired', 'action', 'response', 'duration', 'domain')
 
 class RoleTypeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = RoleType
-        fields = ('url', 'name', 'priority', 'lamda', 'enable', 'optional')
+        fields = ('url', 'name', 'priority', 'lamda', 'enable', 'optional', 'domain')
 
 
 # ViewSets define the view behavior.

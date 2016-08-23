@@ -315,6 +315,7 @@ CREATE TABLE `role` (
   `action` varchar(64) NOT NULL,
   `response` varchar(1024) NOT NULL,
   `duration` int(11) NOT NULL,
+  `domain` varchar(1024) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -325,7 +326,7 @@ CREATE TABLE `role` (
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` VALUES (1,'device','device_1','/test/device','get',1470304637,1475246619,'reject','{\"status\":4003, \"message\":\"illegal device\"}',100),(2,'user','user_1','/test/user','get',1470304637,1475246619,'reject','{\"status\":4002, \"message\":\"illegal user\"}',100),(3,'origin','127.0.0.1','/test/origin','get',1470304637,1475246619,'reject','{\"status\":4001, \"message\":\"illegal origin\"}',100);
+INSERT INTO `role` VALUES (1,'device','device_1','/test/device','get',1470304637,1475246619,'reject','{\"status\":4003, \"message\":\"illegal device\"}',100, 'apis.t.com'),(2,'user','user_1','/test/user','get',1470304637,1475246619,'reject','{\"status\":4002, \"message\":\"illegal user\"}',100,'apis.t.com'),(3,'origin','127.0.0.1','/test/origin','get',1470304637,1475246619,'reject','{\"status\":4001, \"message\":\"illegal origin\"}',100,'apis.t.com');
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -343,6 +344,7 @@ CREATE TABLE `role_type` (
   `lamda` varchar(1024) NOT NULL,
   `enable` int(11) NOT NULL,
   `optional` int(11) NOT NULL,
+  `domain` varchar(1024) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -354,7 +356,7 @@ CREATE TABLE `role_type` (
 
 LOCK TABLES `role_type` WRITE;
 /*!40000 ALTER TABLE `role_type` DISABLE KEYS */;
-INSERT INTO `role_type` VALUES (1,'device',1,'return ngx.req.get_headers()[\'X-Device-ID\']',1,0),(2,'user',2,'return ngx.req.get_headers()[\'X-User-ID\']',1,0),(3,'origin',3,'return ngx.var.remote_addr',1,0);
+INSERT INTO `role_type` VALUES (1,'device',1,'return ngx.req.get_headers()[\'X-Device-ID\']',1,0,'apis.t.com'),(2,'user',2,'return ngx.req.get_headers()[\'X-User-ID\']',1,0,'apis.t.com'),(3,'origin',3,'return ngx.var.remote_addr',1,0,'apis.t.com');
 /*!40000 ALTER TABLE `role_type` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
