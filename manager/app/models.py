@@ -19,7 +19,7 @@ class Role(models.Model):
     action = models.CharField(max_length=64, null=False)
     response = models.CharField(max_length=1024, null=False)
     duration = models.IntegerField(blank=True, null=False)
-    domain = models.CharField(max_length=1024, null=False)
+    domain = models.CharField(max_length=64, null=False)
 
     def __unicode__(self):
         return "%s_%s" %(self.type, self.mark)
@@ -58,7 +58,7 @@ class RoleType(models.Model):
     lamda = models.CharField(max_length=1024, null=False)
     enable = models.IntegerField(choices=ENABLE_CHOICES, default=1, null=False)
     optional = models.IntegerField(choices=OPTIONAL_CHOICES, default=0, null=False)
-    domain = models.CharField(max_length=1024, null=False)
+    domain = models.CharField(max_length=64, null=False)
 
     def __unicode__(self):
         return self.name
