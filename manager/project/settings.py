@@ -142,7 +142,7 @@ REST_FRAMEWORK = {
 
 APPEND_SLASH = False
 
-HTTPTABLES_NOTIFY_URL=["http://172.28.32.105:8001/admin/notify"]
+HTTPTABLES_NOTIFY_URL=["http://127.0.0.1:10983/admin/notify"]
 
 LOGGING = {
     'version': 1,
