@@ -53,7 +53,7 @@ class RoleType(models.Model):
         (1, "可选"),
     )
     id = models.BigIntegerField(primary_key=True)
-    name = models.CharField(unique=True, max_length=64)
+    name = models.CharField(max_length=64)
     priority = models.IntegerField(blank=True, null=False)
     lamda = models.CharField(max_length=1024, null=False)
     enable = models.IntegerField(choices=ENABLE_CHOICES, default=1, null=False)
@@ -80,3 +80,4 @@ class RoleType(models.Model):
 
     class Meta:
         db_table = 'role_type'
+        unique_together = (("name", "domain"),)
