@@ -13,3 +13,4 @@ pip3 install djangorestframework
 pip3 install markdown
 pip3 install django-filter
 pip3 install requests
+pip3 install django-suit==0.2.21
