@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yum groupinstall  "Development Tools"
+yum groupinstall -y "Development Tools"
 yum -y install python34
 yum -y install mariadb mariadb-server mariadb-devel
 yum -y install python34-devel.x86_64
