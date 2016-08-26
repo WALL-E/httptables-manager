@@ -1,7 +1,7 @@
 # httptables-manager
 httptables-manager is a simple model-backed API, to provide management services for [httptables](https://github.com/WALL-E/httptables)
 
-default port: 10085
+`default port`: 10085
 
 ## Compatibility of Operating System
 
