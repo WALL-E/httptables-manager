@@ -1,6 +1,7 @@
 # httptables-manager
 httptables-manager is a simple model-backed API, to provide management services for [httptables](https://github.com/WALL-E/httptables)
 
+default port: 10085
 
 ## Compatibility of Operating System
 
@@ -16,8 +17,8 @@ httptables-manager is a simple model-backed API, to provide management services 
 ## Restful API
 create two read-write API for accessing information on the role_types and roles
 
-* http://127.0.0.1:8080/apis/role_types
-* http://127.0.0.1:8080/apis/roles
+* http://127.0.0.1:10085/apis/role_types
+* http://127.0.0.1:10085/apis/roles
 
 ![dango-rest](images/django-rest.png)
 
@@ -51,7 +52,7 @@ create two read-write API for accessing information on the role_types and roles
 
       run **manager/run.sh**
 
-you can now open the API in your browser at http://127.0.0.1:8080/, and view  'role_types' and 'roles' API. If you use the login control in the top right corner you'll also be able to add, create and delete role_types,roles from the system.
+you can now open the API in your browser at http://127.0.0.1:10085/, and view  'role_types' and 'roles' API. If you use the login control in the top right corner you'll also be able to add, create and delete role_types,roles from the system.
 
 
 ## Integration with httptables
