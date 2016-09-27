@@ -15,10 +15,10 @@ httptables-manager is a simple model-backed API, to provide management services 
 
 
 ## Restful API
-create two read-write API for accessing information on the role_types and roles
+create two read-write API for accessing information on the rule_types and rules
 
-* http://127.0.0.1:10085/apis/role_types
-* http://127.0.0.1:10085/apis/roles
+* http://127.0.0.1:10085/apis/rule_types
+* http://127.0.0.1:10085/apis/rules
 
 ![dango-rest](images/django-rest.png)
 
@@ -52,7 +52,7 @@ create two read-write API for accessing information on the role_types and roles
 
       run **manager/run.sh**
 
-you can now open the API in your browser at http://127.0.0.1:10085/, and view  'role_types' and 'roles' API. If you use the login control in the top right corner you'll also be able to add, create and delete role_types,roles from the system.
+you can now open the API in your browser at http://127.0.0.1:10085/, and view  'rule_types' and 'rules' API. If you use the login control in the top right corner you'll also be able to add, create and delete rule_types,rules from the system.
 
 
 ## Integration with httptables

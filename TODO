@@ -5,6 +5,6 @@ TODO
 
 2. 增加多种操作系统的安装脚本和测试，ubuntu，centos6
 
-3. 保存role记录的时候，需要检查type是否已经在role_type创建
+3. 保存rule记录的时候，需要检查type是否已经在rule_type创建
 
 4. admin页面输入时间更友好

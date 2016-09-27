@@ -40,7 +40,7 @@ class Role(models.Model):
         super(Role, self).save(*args, **kw)
 
     class Meta:
-        db_table = 'role'
+        db_table = 'rule'
 
 
 class RoleType(models.Model):
@@ -79,5 +79,5 @@ class RoleType(models.Model):
         super(RoleType, self).save(*args, **kw)
 
     class Meta:
-        db_table = 'role_type'
+        db_table = 'rule_type'
         unique_together = (("name", "domain"),)
