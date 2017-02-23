@@ -1,5 +1,12 @@
 #!/bin/bash
 
+role=`id -u`
+if test $role -ne 0
+then
+    echo "安装依赖软件需要root权限"
+    exit 1
+fi
+
 yum groupinstall -y "Development Tools"
 yum -y install python34
 yum -y install mariadb mariadb-server mariadb-devel
