@@ -8,8 +8,8 @@ logger = logging.getLogger("django")
 
 # Create your models here.
 
-class Role(models.Model):
-    id = models.BigIntegerField(primary_key=True)
+class Rule(models.Model):
+    id = models.AutoField(primary_key=True)
     type = models.CharField(max_length=64, null=False)
     mark = models.CharField(max_length=1024, null=False)
     uri = models.CharField(max_length=1024, null=False)
@@ -37,13 +37,13 @@ class Role(models.Model):
                     logger.error("[httptables notify] %s: failed" % (url))
             except Exception as e:
                 logger.error("[httptables notify] %s: %s" % (url, e))
-        super(Role, self).save(*args, **kw)
+        super(Rule, self).save(*args, **kw)
 
     class Meta:
         db_table = 'rule'
 
 
-class RoleType(models.Model):
+class RuleType(models.Model):
     ENABLE_CHOICES = (
         (0, "停用"),
         (1, "启用"),
@@ -52,7 +52,7 @@ class RoleType(models.Model):
         (0, "不可选"),
         (1, "可选"),
     )
-    id = models.BigIntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=64)
     priority = models.IntegerField(blank=True, null=False)
     lamda = models.CharField(max_length=1024, null=False)
@@ -76,7 +76,7 @@ class RoleType(models.Model):
                     logger.error("[httptables notify] %s: failed" % (url))
             except Exception as e:
                 logger.error("[httptables notify] %s: %s" % (url, e))
-        super(RoleType, self).save(*args, **kw)
+        super(RuleType, self).save(*args, **kw)
 
     class Meta:
         db_table = 'rule_type'

@@ -331,7 +331,7 @@ DROP TABLE IF EXISTS `rule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `rule` (
-  `id` bigint(20) NOT NULL,
+  `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `type` varchar(64) NOT NULL,
   `mark` varchar(1024) NOT NULL,
   `uri` varchar(1024) NOT NULL,
@@ -364,7 +364,7 @@ DROP TABLE IF EXISTS `rule_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `rule_type` (
-  `id` bigint(20) NOT NULL,
+  `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   `priority` int(11) NOT NULL,
   `lamda` varchar(1024) NOT NULL,

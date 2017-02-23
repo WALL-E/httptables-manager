@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from .models import Role, RoleType
+from .models import Rule, RuleType
 
 
-class RoleAdmin(admin.ModelAdmin):
+class RuleAdmin(admin.ModelAdmin):
     fields = ['type', 'mark', 'uri', 'method', 'createtime', 'expired', 'action', 'response', 'duration', 'domain']
     list_display = ('type', 'mark', 'uri', 'method', 'createtime', 'expired', 'action', 'response', 'duration', 'domain')
     list_filter = ['type', 'action']
@@ -12,7 +12,7 @@ class RoleAdmin(admin.ModelAdmin):
     def get_ordering(self, request):
         return ['-expired']
 
-class RoleTypeAdmin(admin.ModelAdmin):
+class RuleTypeAdmin(admin.ModelAdmin):
     fields = ['name', 'priority', 'lamda', 'enable', 'optional', 'domain']
     list_display = ('name', 'priority', 'lamda', 'enable', 'optional', 'domain')
     list_filter = ['enable', 'optional']
@@ -22,5 +22,5 @@ class RoleTypeAdmin(admin.ModelAdmin):
         return ['priority']
 
 
-admin.site.register(Role, RoleAdmin)
-admin.site.register(RoleType, RoleTypeAdmin)
+admin.site.register(Rule, RuleAdmin)
+admin.site.register(RuleType, RuleTypeAdmin)
